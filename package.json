@@ -1,0 +1,78 @@
+{
+  "name": "dsh-cot-en2cn",
+  "version": "0.1.0",
+  "description": "Inline English-to-Chinese translation plugin for DeepSeek Harness (DSH) thinking blocks without modifying chat history.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "Eyeing0721",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eyeing0721/dsh-cot-en2cn.git"
+  },
+  "homepage": "https://github.com/Eyeing0721/dsh-cot-en2cn#readme",
+  "bugs": {
+    "url": "https://github.com/Eyeing0721/dsh-cot-en2cn/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "deepseek-harness",
+    "chain-of-thought",
+    "cot",
+    "reasoning",
+    "thinking",
+    "translation",
+    "chinese",
+    "client-plugin",
+    "web-ui"
+  ],
+  "dependencies": {},
+  "scripts": {
+    "test": "node tools/smoke.mjs && node tools/host-integration.mjs && node tools/parity-check.mjs && node tools/browser-check.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "CoT 英文转中文",
+    "summary": "展开英文思考块即可在下方阅读中文译文。原文无污染、按块缓存、零运行时依赖，支持自定义翻译模型。",
+    "categories": [
+      "Web UI",
+      "翻译",
+      "效率"
+    ],
+    "surfaces": [
+      "host",
+      "web"
+    ],
+    "compatibility": {
+      "dsh": ">=0.1.0-rc.5",
+      "node": ">=20"
+    },
+    "permissions": {}
+  }
+}

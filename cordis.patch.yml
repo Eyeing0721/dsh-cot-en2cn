@@ -1,0 +1,11 @@
+# dsh-cot-en2cn bundle patch: one host plugin row.
+#
+# The row is a bare plugin by package name: the node half (exports ".") runs in
+# the host process — it owns the settings namespace, the translation engine and
+# the /dsh-cot-en2cn/* routes. The `dsh.client` declaration in package.json
+# makes the browser half (exports "./client", served at
+# /plugins/dsh-cot-en2cn/client.js) load in the web GUI, where it injects the
+# Chinese translation under every expanded thinking block.
+- insert:
+    - id: dsh-cot-en2cn
+      name: dsh-cot-en2cn
