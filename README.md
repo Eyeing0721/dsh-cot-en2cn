@@ -28,10 +28,16 @@ DeepSeek Harness（DSH）的 Web 插件。模型用英文“思考”时，展�
 
 ## 安装与生效
 
-### 从 npm 安装
+### 从 GitHub 安装（推荐）
 
 ```bash
-dsh plugin --profile web add dsh-cot-en2cn
+dsh plugin --profile web add github:Eyeing0721/dsh-cot-en2cn
+```
+
+国内网络如果卡在下载那一步，先给当前终端设好代理再执行：
+
+```powershell
+$env:HTTPS_PROXY = 'http://127.0.0.1:7897'
 ```
 
 ### 从本地目录安装（开发 / 自用）

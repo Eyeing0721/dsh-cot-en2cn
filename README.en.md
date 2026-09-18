@@ -28,10 +28,16 @@ When working with reasoning models such as DeepSeek, GLM, or Gemini, chain-of-th
 
 ## Installation & Setup
 
-### Install via npm
+### Install from GitHub (recommended)
 
 ```bash
-dsh plugin --profile web add dsh-cot-en2cn
+dsh plugin --profile web add github:Eyeing0721/dsh-cot-en2cn
+```
+
+If the download stalls in mainland China, set a proxy for the current shell first:
+
+```powershell
+$env:HTTPS_PROXY = 'http://127.0.0.1:7897'
 ```
 
 ### Install from Local Directory (Development)
